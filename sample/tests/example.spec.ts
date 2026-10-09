@@ -11,7 +11,7 @@ await page.getByPlaceholder('Password').click();
 await page.getByPlaceholder('Password').fill('secret_sauce');
 await page.waitForTimeout(3000);
 await page.locator('#login-button').click();
-await page.waitForTimeout(5000);
+await page.waitForTimeout(2000);
 await page.waitForURL('https://www.saucedemo.com/inventory.html');
 console.log("URL is Correct");
 
