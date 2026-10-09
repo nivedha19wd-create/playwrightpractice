@@ -12,6 +12,7 @@ console.log(await page.locator("table").nth(0).locator("tr").filter({ hasText: "
 await page.waitForTimeout(3000);
 }); */
 
+
 await page.locator('#name').fill('abcd');
 await page.locator('#email').type("abc123@gmail.com",{delay:200});
 await page.keyboard.press("Tab")
