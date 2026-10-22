@@ -59,10 +59,30 @@ await expect(page.locator('#email')).toHaveClass(/form-control/); */
 /*  await page.getByLabel('Thursday').check();
   await expect(page.getByLabel('Thursday')).toBeChecked();
   await expect(page.getByLabel('Sunday')).not.toBeChecked(); */
-  await page.getByPlaceholder('Enter EMail').focus()
-  await expect (page.getByPlaceholder('Enter EMail')).toBeFocused();
+  /* await page.getByPlaceholder('Enter EMail').focus()
+  await expect (page.getByPlaceholder('Enter EMail')).toBeFocused(); */
 
   //softassertion
-  await expect.soft(page.locator("#main")).toBeHidden();
-  
+  /* await expect.soft (page.getByPlaceholder('Enter EMaill')).toBeFocused();
+  await expect.soft(page.getByRole("button", { name: "start" })).toBeEnabled(); */
+
+  //Auto wait
+  /* await page.locator('#name').click(); */
+  // Explicit Waits
+  /* await page.waitForURL(/testautomationpractice/); */
+   /* await page.waitForSelector('button[name="start"]', { state: 'visible' });
+   await page.getByRole('link', { name: ' Udemy Courses' }).click();
+   await page.waitForLoadState("load");
+   await page.waitForTimeout(2000); */
+
+   //Custom Polling
+   /* await expect(async () => { const count = await page.locator("tr").count();
+  expect(count).toBeGreaterThan(2);}).toPass({ timeout: 10_000 }); */
+
+
+  await expect(async () => {
+  const text = await page.locator("#widget-content").textContent();
+  expect(text).toBe("Blog");})
+  .toPass({intervals: [1000, 2000, 5000], timeout: 20_000
+})
 });
